@@ -80,3 +80,13 @@ Add indexed file to Repository:
 ```sh
 git commit
 ```
+
+### Git and file permissions.
+
+...
+create mode 100644 <file>
+first three nnn - object type saved to git, 100 - file.
+second three nnn - file permissions, 644 - not executable, 755 - executable.
+
+chmod +x <file> - changing file permissions modifies the file in git like adding some content to it.
+
