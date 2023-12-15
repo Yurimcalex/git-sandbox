@@ -56,3 +56,27 @@ git config -h
 git help config
 ```
 
+### Repo creation, first commit.
+
+Create repository:
+
+```sh
+git init
+```
+There are three zonez.
+Working Directory > Index > Repository.
+- Working Directory - current project files.
+- Index - list of files tracked by git.
+- Repository - full project's history.
+
+Add file to Index:
+
+```sh
+git add <file>
+```
+
+Add indexed file to Repository:
+
+```sh
+git commit
+```
