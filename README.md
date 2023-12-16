@@ -83,9 +83,8 @@ git commit
 
 ### Git and file permissions.
 
-...
-create mode 100644 <file>
-First three nnn - object type saved to git, 100 - file.
+... create mode 100644 <file>  
+First three nnn - object type saved to git, 100 - file.  
 Second three nnn - file permissions, 644 - not executable, 755 - executable.
 
 chmod +x <file> - changing file permissions modifies the file in git like adding some content to it.
@@ -104,7 +103,7 @@ To show the current commit with additional information:
 git show --pretty=fuller
 ```
 
-Commit's author is the one who came up with current changes.
+Commit's author is the one who came up with current changes.  
 Commiter is the one who created commit in the repsitory.
 
 Set commit's author:
@@ -112,3 +111,19 @@ Set commit's author:
 ```sh
 git commit --author='John Doe <email@some.com>' --date='...'
 ```
+### Adding files and directories, git status.
+
+Add to git all current catalogue - all made changes :
+
+```sh
+git add .
+```
+
+.gitignore - list of files that git doesn't touch.  
+
+Add to git index a file that .gitignore contains:
+
+```sh
+git add -f <file>
+```
+
