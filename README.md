@@ -85,8 +85,30 @@ git commit
 
 ...
 create mode 100644 <file>
-first three nnn - object type saved to git, 100 - file.
-second three nnn - file permissions, 644 - not executable, 755 - executable.
+First three nnn - object type saved to git, 100 - file.
+Second three nnn - file permissions, 644 - not executable, 755 - executable.
 
 chmod +x <file> - changing file permissions modifies the file in git like adding some content to it.
 
+### Git show, author and commiter
+
+To view a commit:
+
+```sh
+git show <commit id>
+```
+
+To show the current commit with additional information:
+
+```sh
+git show --pretty=fuller
+```
+
+Commit's author is the one who came up with current changes.
+Commiter is the one who created commit in the repsitory.
+
+Set commit's author:
+
+```sh
+git commit --author='John Doe <email@some.com>' --date='...'
+```
