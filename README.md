@@ -132,3 +132,15 @@ git add -f <file>
 It's important that one commit do one thing.   
 Such a commit is called atomic.   
 A commit should be consistent.
+
+
+### Why do we need an index?
+
+If we have different changes related to different topics at the same time, we can add the specific topic's changes to the index and then commit them as consistent.
+
+At the single file level, we can choose which changes to add to the index.
+```sh
+git add -p <file>
+```
+
+
