@@ -167,3 +167,32 @@ Such alias adds all changes and untracked files in all directories:
 ```sh
 git config --global.commitall '!git add -A; git commit'
 ```
+
+
+
+### Deleting and renaming files
+
+```sh
+git rm <paths>
+git rm -r <dir>
+```
+The command 'git rm' is the same as 'rm' + 'git add'.
+
+Remove from the index but leave in the working directory:
+```sh
+git rm -r --cached <dir>
+```
+After executing this command <dir> will be untracked.
+
+Flag --cached means that an operation is applied to the index instead of the working directory.
+
+To remove a file with changes that were not saved in the repo:
+```sh
+git rm -f <file>
+```
+
+To rename a file:
+```sh
+git mv <old> <new>
+```
+
