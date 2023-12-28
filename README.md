@@ -144,3 +144,26 @@ git add -p <file>
 ```
 
 
+### A Commit without git add
+
+To save all changes:
+```sh
+git commmit -am"..."
+```
+
+Commit a file without using git add and affecting the other changes:
+```sh
+git commit -m"..." <file>
+```
+These commands don't affect untracked files.
+
+We can create an alias for commiting all changes even untracked files. Add only current directory:
+```sh
+git config --global.commitall '!git add .; git commit'
+git commitall -m ...
+```
+
+Such alias adds all changes and untracked files in all directories:
+```sh
+git config --global.commitall '!git add -A; git commit'
+```
