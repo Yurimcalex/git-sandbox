@@ -127,3 +127,8 @@ Add to git index a file that .gitignore contains:
 git add -f <file>
 ```
 
+### A good commit
+
+It's important that one commit do one thing.   
+Such a commit is called atomic.   
+A commit should be consistent.
