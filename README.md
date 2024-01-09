@@ -224,3 +224,29 @@ Create and switch at the same time:
 git checkout -b <branchName>
 ```
 
+### Checkout command when there are uncommitted changes
+
+If these changes are not needed (the changes will be removed):
+```sh
+git checkout -f <otherBranch>
+```
+
+Remove all uncommited changes:
+```sh
+git checkout -f HEAD
+```
+
+If the changes are needed:
+```sh
+git stash
+git checkout <otherBranch>
+```
+
+Switch back and apply pre saved changes:
+```sh
+git checkout <prevBranch>
+git stash pop
+```
+
+Checkout overwrites files that differ between branches and therefore warns about such a switch. But it does not warn when the files are not different, so you need to be careful not to accidentally commit changes from one branch to another.
+
