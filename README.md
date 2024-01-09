@@ -257,3 +257,23 @@ If we have some uncommitted changes that are not ready to go into the current br
 git checkout -b <anotherBranch>
 ```
 
+### Branches – Transferring branches manually
+
+If we made commits on the master branch and then realized that we would like to put them in a separate branch:
+```sh
+git branch <separateBranch>
+git checkout <separateBranch>
+git branch -f master <commitIdBeforeTheCommits>
+```
+
+or:
+
+```sh
+git branch <separateBranch>
+git checkout -B master <commitIdBeforeTheCommits>
+```
+
+If you change your mind about doing it:
+```sh
+git branch -f master <separateBranch>
+```
