@@ -250,3 +250,10 @@ git stash pop
 
 Checkout overwrites files that differ between branches and therefore warns about such a switch. But it does not warn when the files are not different, so you need to be careful not to accidentally commit changes from one branch to another.
 
+### Branches - Transfer of uncommitted changes
+
+If we have some uncommitted changes that are not ready to go into the current branch, then we can create another branch for them:
+```sh
+git checkout -b <anotherBranch>
+```
+
