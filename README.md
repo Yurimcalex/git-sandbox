@@ -182,7 +182,7 @@ Remove from the index but leave in the working directory:
 ```sh
 git rm -r --cached <dir>
 ```
-After executing this command <dir> will be untracked.
+After executing this command 'dir' will be untracked.
 
 Flag --cached means that an operation is applied to the index instead of the working directory.
 
@@ -194,5 +194,33 @@ git rm -f <file>
 To rename a file:
 ```sh
 git mv <old> <new>
+```
+
+### Branches - creation and switching
+
+A branch is a special link to a commit.   
+.git/refs/heads/branchName - commitId inside.
+
+Show current branch:
+```sh
+git branch
+git branch -v
+```
+
+.git/HEAD - using this file git knows on which branch is it now. 
+
+Create a new branch:
+```sh
+git branch <branchName>
+```
+
+Switch to a branch:
+```sh
+git checkout <branchName>
+```
+
+Create and switch at the same time:
+```sh
+git checkout -b <branchName>
 ```
 
