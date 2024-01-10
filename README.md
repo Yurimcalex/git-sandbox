@@ -277,3 +277,11 @@ If you change your mind about doing it:
 ```sh
 git branch -f master <separateBranch>
 ```
+
+### Branches – State of the detached HEAD
+
+It occurs when we move not to a branch but to some commit. And when we forgot about it and already made a commit, we would move this commit to the current branch:
+```sh
+git cherry-pick <commitId>
+```
+
