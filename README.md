@@ -285,3 +285,25 @@ It occurs when we move not to a branch but to some commit. And when we forgot ab
 git cherry-pick <commitId>
 ```
 
+### Restoring previous versions of files
+
+Restore the specified file to the state of a specific commit:
+```sh
+git checkout <commitId> <filePath>
+```
+
+Reset a file from the index:
+```sh
+git reset <file>
+```
+
+Remove file changes in the working directory.   
+Return the file from the repo to the index and WD:
+```sh
+git checkout HEAD <paths>
+```   
+Return the file from the index to the WD:
+```sh
+git checkout <paths>
+```
+
