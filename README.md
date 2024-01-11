@@ -307,3 +307,43 @@ Return the file from the index to the WD:
 git checkout <paths>
 ```
 
+### View history and old files
+
+All commits:
+```sh
+git log --oneline
+```
+
+Commits on a specific branch:
+```sh
+git log <branch> --oneline
+```
+
+Specific commit:
+```sh
+git show <commitId>
+```
+
+Two commits under The HEAD. Instead of HEAD there can be any commit or branch:
+```sh
+git show HEAD~~ --quiet
+git show HEAD~2 --quiet
+git show @~2 --quiet
+```
+
+Show not changes but the entire file:
+```sh
+git show <commitLink>:<filr>
+example: git show @~:index.html
+```
+
+If the file version in Index is different from the current one:
+```sh
+git show :<file>
+```
+
+Newest commit with the word in the description:
+```sh
+git show :/<word>
+```
+
