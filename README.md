@@ -1,10 +1,29 @@
-### Basics - git configuration
+## Content
+
+- [Basics - git configuration](#title-1)
+- [Repo creation, first commit](#title-2)
+- [Git and file permissions](#title-3)
+- [Git show, author and commiter](#title-4)
+- [Adding files and directories, git status](#title-5)
+- [A good commit](#title-6)
+- [Why do we need an index?](#title-7)
+- [A Commit without git add](#title-8)
+- [Deleting and renaming files](#title-9)
+- [Branches - creation and switching](#title-10)
+- [Checkout command when there are uncommitted changes](#title-11)
+- [Branches - Transfer of uncommitted changes](#title-12)
+- [Branches - Transferring branches manually](#title-13)
+- [Branches – State of the detached HEAD](#title-14)
+- [Restoring previous versions of files](#title-15)
+- [View history and old files](#title-16)
+
+### <a id="title-1">Basics - git configuration</a>
 
 Configuration level flags.
 
 - --system   /etc/gitconfig
 
-- --global   ~/.gitconfig
+- --global   ~/.gitconfig  
 
 - --local   <project>/.git/config
 
@@ -56,7 +75,7 @@ git config -h
 git help config
 ```
 
-### Repo creation, first commit.
+### <a id="title-2">Repo creation, first commit</a>
 
 Create repository:
 
@@ -81,7 +100,7 @@ Add indexed file to Repository:
 git commit
 ```
 
-### Git and file permissions.
+### <a id="title-3">Git and file permissions</a>
 
 ... create mode 100644 <file>  
 First three nnn - object type saved to git, 100 - file.  
@@ -89,7 +108,7 @@ Second three nnn - file permissions, 644 - not executable, 755 - executable.
 
 chmod +x <file> - changing file permissions modifies the file in git like adding some content to it.
 
-### Git show, author and commiter
+### <a id="title-4">Git show, author and commiter</a>
 
 To view a commit:
 
@@ -111,7 +130,7 @@ Set commit's author:
 ```sh
 git commit --author='John Doe <email@some.com>' --date='...'
 ```
-### Adding files and directories, git status.
+### <a id="title-5">Adding files and directories, git status</a>
 
 Add to git all current catalogue - all made changes :
 
@@ -127,14 +146,14 @@ Add to git index a file that .gitignore contains:
 git add -f <file>
 ```
 
-### A good commit
+### <a id="title-6">A good commit</a>
 
 It's important that one commit do one thing.   
 Such a commit is called atomic.   
 A commit should be consistent.
 
 
-### Why do we need an index?
+### <a id="title-7">Why do we need an index?</a>
 
 If we have different changes related to different topics at the same time, we can add the specific topic's changes to the index and then commit them as consistent.
 
@@ -144,7 +163,7 @@ git add -p <file>
 ```
 
 
-### A Commit without git add
+### <a id="title-8">A Commit without git add</a>
 
 To save all changes:
 ```sh
@@ -170,7 +189,7 @@ git config --global.commitall '!git add -A; git commit'
 
 
 
-### Deleting and renaming files
+### <a id="title-9">Deleting and renaming files</a>
 
 ```sh
 git rm <paths>
@@ -196,7 +215,7 @@ To rename a file:
 git mv <old> <new>
 ```
 
-### Branches - creation and switching
+### <a id="title-10">Branches - creation and switching</a>
 
 A branch is a special link to a commit.   
 .git/refs/heads/branchName - commitId inside.
@@ -224,7 +243,7 @@ Create and switch at the same time:
 git checkout -b <branchName>
 ```
 
-### Checkout command when there are uncommitted changes
+### <a id="title-11">Checkout command when there are uncommitted changes</a>
 
 If these changes are not needed (the changes will be removed):
 ```sh
@@ -250,14 +269,14 @@ git stash pop
 
 Checkout overwrites files that differ between branches and therefore warns about such a switch. But it does not warn when the files are not different, so you need to be careful not to accidentally commit changes from one branch to another.
 
-### Branches - Transfer of uncommitted changes
+### <a id="title-12">Branches - Transfer of uncommitted changes</a>
 
 If we have some uncommitted changes that are not ready to go into the current branch, then we can create another branch for them:
 ```sh
 git checkout -b <anotherBranch>
 ```
 
-### Branches – Transferring branches manually
+### <a id="title-13">Branches – Transferring branches manually</a>
 
 If we made commits on the master branch and then realized that we would like to put them in a separate branch:
 ```sh
@@ -278,14 +297,14 @@ If you change your mind about doing it:
 git branch -f master <separateBranch>
 ```
 
-### Branches – State of the detached HEAD
+### <a id="title-14">Branches – State of the detached HEAD</a>
 
 It occurs when we move not to a branch but to some commit. And when we forgot about it and already made a commit, we would move this commit to the current branch:
 ```sh
 git cherry-pick <commitId>
 ```
 
-### Restoring previous versions of files
+### <a id="title-15">Restoring previous versions of files</a>
 
 Restore the specified file to the state of a specific commit:
 ```sh
@@ -307,7 +326,7 @@ Return the file from the index to the WD:
 git checkout <paths>
 ```
 
-### View history and old files
+### <a id="title-16">View history and old files</a>
 
 All commits:
 ```sh
@@ -346,4 +365,3 @@ Newest commit with the word in the description:
 ```sh
 git show :/<word>
 ```
-
